@@ -1,0 +1,31 @@
+name: Build and Deploy Web App
+
+on:
+  push:
+    branches:
+      - main  # عند رفع التغييرات على الفرع الرئيسي
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🐍 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🏗 Build project
+        run: npm run build  # إذا كان مشروعك React/Vue/Next.js
+
+      - name: 🚀 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build  # مجلد الإخراج بعد البناء (React يستخدم build)
