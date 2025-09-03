@@ -1,0 +1,27 @@
+# Web framework
+Flask==2.0.1
+Flask-SQLAlchemy==2.5.1
+Flask-Login==0.5.0
+Flask-WTF==0.15.1
+
+# For barcode generation
+python-barcode==0.13.1
+Pillow==8.3.1
+
+# For data encryption
+cryptography==3.4.8
+
+# For PDF generation
+reportlab==3.5.68
+
+# For data validation
+pydantic==1.8.2
+
+# For reading PDF files
+PyPDF2==3.0.1
+
+# For reading Word documents
+python-docx==0.8.11
+
+# For web UI
+Bootstrap-Flask==2.0.1
